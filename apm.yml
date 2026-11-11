@@ -1,0 +1,30 @@
+name: java project
+version: 1.0.0
+description: APM project
+author: Denis Gabaidulin
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, kiro, opencode, windsurf
+targets:
+  - claude
+  - codex
+dependencies:
+  apm:
+    - git: https://github.com/sherman/codex-skills.git
+      path: skills/effective-java-concurrency
+      ref: master
+    - git: https://github.com/mattpocock/skills.git
+      path: skills/engineering/grill-with-docs
+      ref: master
+    - git: https://github.com/mattpocock/skills.git
+      path: skills/productivity/grilling
+      ref: master
+    - git: https://github.com/mattpocock/skills.git
+      path: skills/engineering/domain-modeling
+      ref: master
+    - git: https://github.com/ML-SystemDesign/MLSystemDesign.git
+      path: skills/lossless-doc-compress
+      ref: master
+  mcp: []
+includes: auto
+scripts: {}
